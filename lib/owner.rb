@@ -44,7 +44,7 @@ class Owner
     your_dogs = []
     if Dog.all.count != 0 
       Dog.all.each do |dog| 
-        if dog.owner.name != nil && dog.owner.name == self.name
+        if dog.owner != nil && dog.owner.name == self.name
           your_dogs << dog
         end
       end
