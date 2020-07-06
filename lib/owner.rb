@@ -27,7 +27,7 @@ class Owner
   end
   
   def cats
-    if Cat.all.count != 0 do 
+    if Cat.all.count != 0 
       your_cats = Cat.all.reject{|cat| cat.owner.name != self.name}
       your_cats
     else
