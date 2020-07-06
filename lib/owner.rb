@@ -30,7 +30,7 @@ class Owner
     your_cats = []
     if Cat.all.count != 0 
       Cat.all.each do |cat| 
-        if cat.owner.name == self.name
+        if cat.owner != nil && cat.owner.name == self.name
           your_cats << cat
         end
       end
@@ -79,12 +79,12 @@ class Owner
   def sell_pets
     self.cats.each do |cat|
       cat.mood = "nervous"
-      cat.owner = ""
+      cat.owner = nil
     end
     
     self.dogs.each do |dog|
       dog.mood = "nervous"
-      dog.owner = ""
+      dog.owner = nil
     end
   end
   
