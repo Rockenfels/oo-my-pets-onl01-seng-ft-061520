@@ -28,7 +28,7 @@ class Owner
   
   def cats
     if Cat.all.count != 0 
-      your_cats = Cat.all.reject{|cat| cat.owner.name != self.name}
+      your_cats = Cat.all.collect{|cat| cat.owner.name == self.name}
       your_cats
     else
       []
@@ -37,7 +37,7 @@ class Owner
   
   def dogs
     if Dog.all.count != 0 
-      your_dogs = Dog.all.reject{|dog| dog.owner.name != self.name}
+      your_dogs = Dog.all.collect{|dog| dog.owner.name == self.name}
       your_dogs
     else
       []
