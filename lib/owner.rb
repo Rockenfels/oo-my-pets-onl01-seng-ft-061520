@@ -29,7 +29,7 @@ class Owner
   def cats
     your_cats = []
     if Cat.all.count != 0 
-       your_cats = Cat.all.each do |cat| 
+      Cat.all.each do |cat| 
         if cat.owner.name == self.name
           your_cats << cat
         end
@@ -43,7 +43,7 @@ class Owner
   def dogs
     your_dogs = []
     if Dog.all.count != 0 
-      your_dogs = Dog.all.each do |dog| 
+      Dog.all.each do |dog| 
         if dog.owner.name == self.name
           your_dogs << dog
         end
