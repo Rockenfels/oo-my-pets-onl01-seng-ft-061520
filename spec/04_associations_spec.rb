@@ -5,10 +5,12 @@ describe "Associations" do
     @owner = Owner.new("Timmy")
   end
 
-  after do
-    Owner.all.clear
+  after(:each) do 
+    Owner.all.clear 
+    Dog.all.clear
+    Cat.all.clear
   end
-
+  
   context 'Owner instance methods' do
     describe "#cats" do
       it "returnsa a collection of all the cats that belong to the owner" do
@@ -24,7 +26,7 @@ describe "Associations" do
     end
 
     describe "#dogs" do
-      it "returnsa a collection of all the dogs that belong to the owner" do
+      it "returns a collection of all the dogs that belong to the owner" do
         dog_1 = Dog.new("Fido", @owner)
         dog_2 = Dog.new("Snuffles", @owner)
         dog_3 = Dog.new("Charley", @owner)
